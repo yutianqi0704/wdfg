@@ -1,0 +1,19 @@
+ sudo mysql -u root -p
+ create database gouwuche_mysql charset=utf8£»
+use gouwuche_mysql;
+create table list(
+    -> id int auto_increment primary key,
+    -> likes varchar(30),
+    -> discount varchar(40),
+    -> wishes varchar(20));
+
+desc list;
+insert into list(id,likes,discount,wishes)
+    -> values(1,"foods","80%","clothes");
+select * from list;
+insert into list(id,likes,discount,wishes) values(2,"books","85%","pants"),(3,"shoes","90%","shoujike");
+select * from list; 
+update list set likes='clothes' where likes='pants';
+select * from list;
+delete from list where wishes="shoujike";
+select * from list;
